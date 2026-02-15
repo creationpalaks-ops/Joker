@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Claim Prize</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#111;
+    font-family:Arial;
+    color:white;
+    overflow:hidden;
+}
+
+button{
+    padding:15px 30px;
+    font-size:18px;
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+    background:gold;
+    font-weight:bold;
+}
+
+#jokerContainer{
+    position:fixed;
+    bottom:-400px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    transition:0.8s ease;
+}
+
+#jokerContainer img{
+    width:250px;
+}
+
+.show{
+    bottom:30px;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="claimPrize()" id="claimBtn">Claim Prize</button>
+
+<div id="jokerContainer">
+    <img src="joker.png" alt="Joker">
+    <h2>You are Joker!! 🤡</h2>
+</div>
+
+<audio id="sound" src="sound.mp3"></audio>
+
+<script>
+function claimPrize(){
+    document.getElementById("jokerContainer").classList.add("show");
+    document.getElementById("sound").play();
+    document.getElementById("claimBtn").disabled = true;
+}
+</script>
+
+</body>
+</html>
+
